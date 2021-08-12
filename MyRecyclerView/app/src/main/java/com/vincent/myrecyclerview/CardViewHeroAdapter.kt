@@ -25,7 +25,9 @@ class CardViewHeroAdapter(private val listHero: ArrayList<Hero>) : RecyclerView.
                 .into(holder.imgPhoto)
         holder.tvName.text = hero.name
         holder.tvDetail.text = hero.detail
-        holder.btnFavorite.setOnClickListener { Toast.makeText(holder.itemView.context, "Favorite " + listHero[holder.adapterPosition].name, Toast.LENGTH_SHORT).show() }
+        holder.btnFavorite.setOnClickListener{
+            Toast.makeText(holder.itemView.context, "Favorite " + listHero[holder.adapterPosition].name, Toast.LENGTH_SHORT).show()
+        }
         holder.btnShare.setOnClickListener { Toast.makeText(holder.itemView.context, "Share " + listHero[holder.adapterPosition].name, Toast.LENGTH_SHORT).show() }
         holder.itemView.setOnClickListener { Toast.makeText(holder.itemView.context, "Kamu memilih " + listHero[holder.adapterPosition].name, Toast.LENGTH_SHORT).show() }
     }
@@ -41,4 +43,5 @@ class CardViewHeroAdapter(private val listHero: ArrayList<Hero>) : RecyclerView.
         var btnFavorite: Button = itemView.findViewById(R.id.btn_set_favorite)
         var btnShare: Button = itemView.findViewById(R.id.btn_set_share)
     }
+
 }
